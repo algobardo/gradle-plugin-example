@@ -37,7 +37,8 @@ public class PreprocessorPlugin implements Plugin<Project> {
               doLast {
                 println 'Done instrumenting the tests'
               }
-              commandLine "${sootPath} ${variant.javaCompile.destinationDir}"
+              commandLine "${sootPath}" 
+              args = ["${variant.javaCompile.destinationDir}"]
             }
 
             variant.dex.dependsOn mytask
