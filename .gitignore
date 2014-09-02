@@ -1,6 +1,5 @@
 exampleProjects/multiFlavorExample/MultiFlavorExampleProject/.gradle
 exampleProjects/multiFlavorExample/MultiFlavorExampleProject/build
-plugin/.gradle
-plugin/build
-exampleProjects/basicExample/BasicExampleProject/.gradle
-exampleProjects/basicExample/BasicExampleProject/build
+.gradle
+build/
+*.DS_Store

@@ -8,8 +8,8 @@ dependencies {
 apply plugin: 'maven'
 
 group = 'com.crashlytics.examples.gradle'
-// looks odd, but pulls the version from the property defined in gradle.properties
-version = version
+
+version = version // pulls the version from the property defined in gradle.properties
 String artifactId = 'preprocessor'
 
 repositories {
@@ -30,7 +30,6 @@ install {
         pom.artifactId = artifactId
     }
 }
-
 
 jar {
 
