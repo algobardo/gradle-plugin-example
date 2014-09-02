@@ -5,7 +5,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.tasks.Exec
 
 public class PreprocessorPlugin implements Plugin<Project> {
-
+  String sootPath = "/Volumes/Android4.4.3/androidtestingproject/Instrumentation/SootAndroidInstrumentation"
 /*
   public class PreprocessorPluginExtension {
       public PreprocessorPluginExtension(String base){
@@ -20,8 +20,6 @@ public class PreprocessorPlugin implements Plugin<Project> {
     project.configure(project) {
       if (it.hasProperty("android")) {
         project.android.testVariants.all { variant ->
-          String sootPath = "./soot/SootAndroidInstrumentation/bin/SootAndroidInstrumentation"
-
           logger.warn(variant.packageApplication.outputFile.toString())
           logger.warn(variant.packageApplication.toString())
           
