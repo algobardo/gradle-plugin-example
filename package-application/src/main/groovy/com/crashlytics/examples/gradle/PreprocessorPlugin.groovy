@@ -9,7 +9,7 @@ import org.gradle.api.tasks.Exec
  */
 
 public class PreprocessorPlugin implements Plugin<Project> {
-  String sootPath = "/Volumes/Android4.4.3/androidtestingproject/Instrumentation/SootAndroidInstrumentation"
+  String sootPath = "/Volumes/Android4.4.3/androidtestingproject/Instrumentation/SootAndroidInstrumentation/build/install/SootAndroidInstrumentation/bin/SootAndroidInstrumentation"
 
   void apply(Project project) {
     project.configure(project) {
@@ -33,7 +33,7 @@ public class PreprocessorPlugin implements Plugin<Project> {
             args = ["${variant.packageApplication.outputFile}"]
           }
 
-          variant.dex.dependsOn mytask
+          variant.install.dependsOn mytask // maybe zipAlign for release
         }
       } 
     }
