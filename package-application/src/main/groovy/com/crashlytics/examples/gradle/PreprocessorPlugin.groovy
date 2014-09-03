@@ -10,7 +10,8 @@ import org.gradle.api.tasks.Exec
 
 public class PreprocessorPlugin implements Plugin<Project> {
   String sootPath = "/Volumes/Android4.4.3/androidtestingproject/Instrumentation/SootAndroidInstrumentation/build/install/SootAndroidInstrumentation/bin/SootAndroidInstrumentation"
-
+  String workDir = "/Volumes/Android4.4.3/androidtestingproject/Instrumentation/SootAndroidInstrumentation/"
+  
   void apply(Project project) {
     project.configure(project) {
       if (it.hasProperty("android")) {
@@ -29,6 +30,7 @@ public class PreprocessorPlugin implements Plugin<Project> {
             doLast {
               println "Done instrumenting the tests"
             }
+            workingDir "${workDir}"
             commandLine "${sootPath}"
             args = ["${variant.packageApplication.outputFile}"]
           }
