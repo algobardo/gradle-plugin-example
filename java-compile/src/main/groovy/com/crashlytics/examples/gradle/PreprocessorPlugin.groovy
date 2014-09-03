@@ -5,7 +5,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.tasks.Exec
 
 public class PreprocessorPlugin implements Plugin<Project> {
-  String sootPath = "/Volumes/Android4.4.3/androidtestingproject/Instrumentation/SootAndroidInstrumentation"
+  String sootPath = "/Volumes/Android4.4.3/androidtestingproject/Instrumentation/SootAndroidInstrumentation/build/install/SootAndroidInstrumentation/bin/SootAndroidInstrumentation"
 /*
   public class PreprocessorPluginExtension {
       public PreprocessorPluginExtension(String base){
