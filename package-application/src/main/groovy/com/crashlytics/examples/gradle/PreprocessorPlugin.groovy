@@ -40,6 +40,7 @@ public class PreprocessorPlugin implements Plugin<Project> {
         }
 
         logger.warn("Application variants...");
+        /*  DEACTIVATE TO DISABLE PROBLEMS 
         project.android.applicationVariants.all { variant ->
           logger.warn("outputFile:" + variant.packageApplication.outputFile.toString())
           logger.warn("packageApplication:" + variant.packageApplication.toString())
@@ -64,6 +65,7 @@ public class PreprocessorPlugin implements Plugin<Project> {
             variant.install.dependsOn mytask // maybe zipAlign for release
           }
         }
+         UP TO HERE */ 
       }
     }
   }
