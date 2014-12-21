@@ -15,9 +15,10 @@ public class PreprocessorPlugin implements Plugin<Project> {
   void apply(Project project) {
     project.configure(project) {
       if (it.hasProperty("android")) {
+        logger.warn("Test variants...")
         project.android.testVariants.all { variant ->
-          logger.warn(variant.packageApplication.outputFile.toString())
-          logger.warn(variant.packageApplication.toString())
+          logger.warn("outputFile:" + variant.packageApplication.outputFile.toString())
+          logger.warn("packageApplication:" + variant.packageApplication.toString())
           
           variant.packageApplication << {
             println "Working on " + variant.packageApplication.outputFile
@@ -41,7 +42,35 @@ public class PreprocessorPlugin implements Plugin<Project> {
 
           // variant.zipAlign.dependsOn mytask
         }
-      } 
+
+        logger.warn("Application variants...");
+        /*  DEACTIVATE TO DISABLE PROBLEMS 
+        project.android.applicationVariants.all { variant ->
+          logger.warn("outputFile:" + variant.packageApplication.outputFile.toString())
+          logger.warn("packageApplication:" + variant.packageApplication.toString())
+          
+          if(!variant.packageApplication.toString().contains("Release")) {
+            variant.packageApplication << {
+              println "Working on " + variant.packageApplication.outputFile
+            }
+
+            def mytask = project.tasks.create("runtask${variant.baseName}", Exec.class)
+
+            mytask.configure {
+              dependsOn variant.packageApplication
+              doLast {
+                println "Done instrumenting the application"
+              }
+              workingDir "${workDir}"
+              commandLine "${sootPath}"
+              args = ["${variant.packageApplication.outputFile}"]
+            }
+
+            variant.install.dependsOn mytask // maybe zipAlign for release
+          }
+        }
+         UP TO HERE */ 
+      }
     }
   }
 }
