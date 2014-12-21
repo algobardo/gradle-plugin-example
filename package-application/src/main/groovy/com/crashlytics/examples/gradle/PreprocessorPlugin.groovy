@@ -35,7 +35,11 @@ public class PreprocessorPlugin implements Plugin<Project> {
             args = ["${variant.packageApplication.outputFile}"]
           }
 
-          variant.install.dependsOn mytask // maybe zipAlign for release
+          variant.packageApplication.doLast {
+            mytask.execute()
+          }
+
+          // variant.zipAlign.dependsOn mytask
         }
       } 
     }
