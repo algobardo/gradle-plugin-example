@@ -19,10 +19,6 @@ public class PreprocessorPlugin implements Plugin<Project> {
         project.android.testVariants.all { variant ->
           logger.warn("outputFile:" + variant.packageApplication.outputFile.toString())
           logger.warn("packageApplication:" + variant.packageApplication.toString())
-          
-          variant.packageApplication << {
-            println "Working on " + variant.packageApplication.outputFile
-          }
 
           def mytask = project.tasks.create("runtask${variant.baseName}", Exec.class)
 
@@ -37,10 +33,9 @@ public class PreprocessorPlugin implements Plugin<Project> {
           }
 
           variant.packageApplication.doLast {
+            println "Working on " + variant.packageApplication.outputFile
             mytask.execute()
           }
-
-          // variant.zipAlign.dependsOn mytask
         }
 
         logger.warn("Application variants...");
