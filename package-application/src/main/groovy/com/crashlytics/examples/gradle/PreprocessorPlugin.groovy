@@ -40,32 +40,6 @@ public class PreprocessorPlugin implements Plugin<Project> {
         }
 
         logger.warn("Application variants...");
-        /*  DEACTIVATE TO DISABLE PROBLEMS 
-        project.android.applicationVariants.all { variant ->
-          logger.warn("outputFile:" + variant.packageApplication.outputFile.toString())
-          logger.warn("packageApplication:" + variant.packageApplication.toString())
-          
-          if(!variant.packageApplication.toString().contains("Release")) {
-            variant.packageApplication << {
-              println "Working on " + variant.packageApplication.outputFile
-            }
-
-            def mytask = project.tasks.create("runtask${variant.baseName}", Exec.class)
-
-            mytask.configure {
-              dependsOn variant.packageApplication
-              doLast {
-                println "Done instrumenting the application"
-              }
-              workingDir "${workDir}"
-              commandLine "${sootPath}"
-              args = ["${variant.packageApplication.outputFile}"]
-            }
-
-            variant.install.dependsOn mytask // maybe zipAlign for release
-          }
-        }
-         UP TO HERE */ 
       }
     }
   }
