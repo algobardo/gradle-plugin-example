@@ -1,3 +1,11 @@
+# Instrumentation Gradle Plugin 
+
+Forked from https://github.com/crashlytics/gradle-plugin-example.
+
+Original README follows.
+
+# Original Readme
+
 ![image](http://www.crashlytics.com/blog/wp-content/uploads/2013/07/Gradle.png)
 
 This project is an example of a Gradle plugin based on the contents of this blog post:
