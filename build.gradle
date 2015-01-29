@@ -5,15 +5,10 @@ dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.0.6'
 }
 
-apply plugin: 'maven'
-
-group = 'dk.au.cs.thor.gradle'
-
-version = version // pulls the version from the property defined in gradle.properties
-String artifactId = 'instrumentation'
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 configurations {
@@ -23,6 +18,15 @@ configurations {
 dependencies {
     testCompile 'junit:junit:4.11'
 }
+
+
+
+
+apply plugin: 'maven'
+
+group = 'dk.au.cs.thor.gradle'
+version = version // pulls the version from the property defined in gradle.properties
+String artifactId = 'instrumentation'
 
 install {
     repositories.mavenInstaller {
