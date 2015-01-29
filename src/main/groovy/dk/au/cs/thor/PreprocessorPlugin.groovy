@@ -1,14 +1,10 @@
-package com.crashlytics.examples.gradle
+package dk.au.dk.thor.gradle
 
 import org.gradle.api.Project
 import org.gradle.api.Plugin
 import org.gradle.api.tasks.Exec
 
-/**
- * See http://tools.android.com/tech-docs/new-build-system/user-guide.
- */
-
-public class PreprocessorPlugin implements Plugin<Project> {
+public class InstrumentationPlugin implements Plugin<Project> {
   String sootPath = "/Volumes/Android4.4.3/androidtestingproject/Instrumentation/SootAndroidInstrumentation/build/install/SootAndroidInstrumentation/bin/SootAndroidInstrumentation"
   String workDir = "/Volumes/Android4.4.3/androidtestingproject/Instrumentation/SootAndroidInstrumentation/"
   
