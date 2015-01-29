@@ -7,10 +7,10 @@ dependencies {
 
 apply plugin: 'maven'
 
-group = 'com.crashlytics.examples.gradle'
+group = 'dk.au.cs.thor.gradle'
 
 version = version // pulls the version from the property defined in gradle.properties
-String artifactId = 'preprocessor'
+String artifactId = 'instrumentation'
 
 repositories {
     mavenCentral()
