@@ -1,4 +1,4 @@
-package dk.au.dk.thor.gradle
+package dk.au.cs.thor.gradle
 
 import org.gradle.api.Project
 import org.gradle.api.Plugin
