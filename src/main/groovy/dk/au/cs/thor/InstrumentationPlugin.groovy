@@ -5,8 +5,8 @@ import org.gradle.api.Plugin
 import org.gradle.api.tasks.Exec
 
 public class InstrumentationPlugin implements Plugin<Project> {
-  String sootPath = "/Volumes/Android4.4.3/androidtestingproject/Instrumentation/SootAndroidInstrumentation/build/install/SootAndroidInstrumentation/bin/SootAndroidInstrumentation"
-  String workDir = "/Volumes/Android4.4.3/androidtestingproject/Instrumentation/SootAndroidInstrumentation/"
+  String sootPath = "/Volumes/Android4.4.3/thor/Instrumentation/SootAndroidInstrumentation/build/install/SootAndroidInstrumentation/bin/SootAndroidInstrumentation"
+  String workDir = "/Volumes/Android4.4.3/thor/Instrumentation/SootAndroidInstrumentation/"
   
   void apply(Project project) {
     project.configure(project) {
