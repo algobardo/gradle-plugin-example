@@ -9,6 +9,8 @@ public class InstrumentationPlugin implements Plugin<Project> {
   String workDir = "/Volumes/Android4.4.3/thor/Instrumentation/SootAndroidInstrumentation/"
   
   void apply(Project project) {
+    project.extensions.create("instrumentation", InstrumentationPluginExtension)
+
     project.configure(project) {
       if (it.hasProperty("android")) {
         logger.warn("Test variants...")
@@ -25,7 +27,7 @@ public class InstrumentationPlugin implements Plugin<Project> {
             }
             workingDir "${workDir}"
             commandLine "${sootPath}"
-            args = ["${variant.packageApplication.outputFile}"]
+            args = ["${variant.packageApplication.outputFile}", "${project.instrumentation.mode}"]
           }
 
           variant.packageApplication.doLast {
@@ -38,4 +40,8 @@ public class InstrumentationPlugin implements Plugin<Project> {
       }
     }
   }
+}
+
+class InstrumentationPluginExtension {
+    def String mode = "all"
 }
